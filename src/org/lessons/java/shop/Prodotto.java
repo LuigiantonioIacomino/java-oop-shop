@@ -9,8 +9,17 @@ public class Prodotto {
     private int prezzo;
     private int iva;
 
-    public Prodotto(String nome, String descrizione, int prezzo, int iva) {
+    public Prodotto(String nome, String descrizione, int prezzo, int iva) throws IllegalArgumentException {
         Random randomNumber=new Random();
+        if(prezzo<0){
+            throw new IllegalArgumentException();
+        }
+        if(iva<0){
+            throw new IllegalArgumentException();
+        }
+        if(nome.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
         int number=randomNumber.nextInt();
         this.codice =number;
         this.nome = nome;
