@@ -9,6 +9,7 @@ public class Main {
         }
         catch (Exception e) {
             System.out.println("eccezione catturata");
+            System.out.println("");
 
         }
 
